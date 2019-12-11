@@ -1,6 +1,8 @@
 package com.winterbe.java8.samples.stream;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -35,5 +37,10 @@ public class Streams8 {
             .mapToObj(i -> "a" + i)
             .forEach(System.out::println);
 
+        List list = new ArrayList();
+
+        Stream.of("1,2,3".split(",")).mapToLong(Long::parseLong).forEach(s -> list.add(s));
+
+        System.out.println(list);
     }
 }

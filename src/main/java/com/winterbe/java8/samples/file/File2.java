@@ -45,7 +45,7 @@ import java.util.stream.Stream;
 public class File2 {
 
     public static void main(String[] args) throws Exception {
-        //        paths();
+        //                paths();
         //        createFile();
         //        listDir();
         permissions();
@@ -60,6 +60,7 @@ public class File2 {
     private static void paths() throws IOException {
         // 1)首先是final类Paths的两个static方法，如何从一个路径字符串来构造Path对象：
         Path path = Paths.get("/tmp/", "java8");
+        Path path0 = Paths.get("");
         Path path1 = Paths.get("/tmp/java8");
 
         URI u = URI.create("file:///tmp/java8");
@@ -177,7 +178,7 @@ public class File2 {
      * 读取和设置文件权限：
      */
     private static void permissions() throws IOException {
-        Path profile = Paths.get("/tmp/java8");
+        Path profile = Paths.get("/Users/wanglei60/GitProjects/baidu/aipe/aipe-cvpaas/cvpaas-agent/data/agent.json");
         PosixFileAttributes posixFileAttributes = Files.readAttributes(profile, PosixFileAttributes.class);// 读取文件的权限
         Set<PosixFilePermission> posixPermissions = posixFileAttributes.permissions();
         posixPermissions.clear();
